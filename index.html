@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohammad Reza Gholikhani | Frontend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F8FC; --surface:#FFFFFF; --ink:#172230; --sub:#5C6B7E; --line:#DFE6F0;
+  --accent:#4C6FE7; --accent-soft:#E4E9FD; --mint:#1FAF95; --mint-soft:#DCF6EF;
+  --header:rgba(245,248,252,.88);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E141B; --surface:#151D27; --ink:#E8EEF5; --sub:#9AA8B8; --line:#243142;
+    --accent:#8AA5FF; --accent-soft:#1C2745; --mint:#3DD6B8; --mint-soft:#10302B;
+    --header:rgba(14,20,27,.88); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E141B; --surface:#151D27; --ink:#E8EEF5; --sub:#9AA8B8; --line:#243142;
+  --accent:#8AA5FF; --accent-soft:#1C2745; --mint:#3DD6B8; --mint-soft:#10302B;
+  --header:rgba(14,20,27,.88); color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--ink);font-family:'Inter','Vazirmatn',system-ui,'Segoe UI',Tahoma,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+:lang(fa) body, html:lang(fa) body{font-family:'Vazirmatn','Inter',Tahoma,system-ui,sans-serif;line-height:1.9}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--header);z-index:30}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--header);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-weight:700;letter-spacing:-.3px}
+nav{display:flex;gap:20px;font-size:14px;color:var(--sub)}
+nav a:hover{color:var(--ink)}
+#lang{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;cursor:pointer}
+#lang:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:640px){nav{display:none}}
+
+.hero{padding:72px 0 48px;background:radial-gradient(60% 80% at 85% 0%,var(--accent-soft),transparent 70%),radial-gradient(40% 60% at 5% 100%,var(--mint-soft),transparent 70%)}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--mint);background:var(--mint-soft);padding:6px 14px;border-radius:999px}
+.chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mint)}
+.eyebrow{margin-top:26px;font-size:14px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent)}
+:lang(fa) .eyebrow{letter-spacing:0;text-transform:none;font-size:16px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.1;letter-spacing:-1px;margin-top:8px}
+.lead{margin-top:18px;max-width:620px;font-size:18px;color:var(--sub)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{padding:12px 22px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{transform:translateY(-1px)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:44px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.stat b{display:block;font-size:30px;letter-spacing:-.5px;color:var(--accent)}
+.stat span{font-size:14px;color:var(--sub)}
+
+section{padding:56px 0}
+h2{font-size:26px;letter-spacing:-.4px;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.card:hover{border-color:var(--accent)}
+.card h3{font-size:18px}
+.card p{font-size:15px;color:var(--sub)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.tag{font-size:12.5px;font-weight:500;padding:4px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent);direction:ltr}
+.tag.m{background:var(--mint-soft);color:var(--mint)}
+
+.tl{list-style:none;border-inline-start:2px solid var(--line);margin-inline-start:6px}
+.tl li{position:relative;padding-inline-start:26px;padding-bottom:26px}
+.tl li::before{content:"";position:absolute;inset-inline-start:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl h3{font-size:17px}
+.when{font-size:13px;font-weight:600;color:var(--accent);direction:ltr;display:inline-block}
+.tl p{font-size:15px;color:var(--sub);margin-top:2px}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.skills h3{font-size:14px;color:var(--sub);font-weight:600;margin-bottom:12px}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.two p{font-size:15px;color:var(--sub)}
+.two b{color:var(--ink)}
+
+.contact{text-align:center}
+.contact p{color:var(--sub);font-size:18px;max-width:520px;margin:0 auto 24px}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+footer{padding:28px 0 40px;text-align:center;font-size:13px;color:var(--sub);border-top:1px solid var(--line)}
+@media(max-width:640px){.hero{padding-top:48px}.stat b{font-size:26px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" data-k="logo">M. R. Gholikhani</a>
+    <nav>
+      <a href="#work" data-k="n1">Work</a>
+      <a href="#experience" data-k="n2">Experience</a>
+      <a href="#skills" data-k="n3">Skills</a>
+      <a href="#contact" data-k="n4">Contact</a>
+    </nav>
+    <button id="lang" type="button" aria-label="Switch language">فارسی</button>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <span class="chip" data-k="open">Open to new opportunities</span>
+    <p class="eyebrow" data-k="role">Frontend Developer</p>
+    <h1 data-k="name">Mohammad Reza Gholikhani</h1>
+    <p class="lead" data-k="lead">I build fast, reliable interfaces for banking products, with Angular, clean architecture and design systems.</p>
+    <div class="cta">
+      <a class="btn primary" href="#contact" data-k="cta1">Get in touch</a>
+      <a class="btn" href="https://github.com/mrghkh12" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/mrgholikhani" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>1M</b><span data-k="s1">users on the MetaBank platform</span></div>
+      <div class="stat"><b>56%</b><span data-k="s2">smaller design system (800 to 350 KB)</span></div>
+      <div class="stat"><b>500K+</b><span data-k="s3">installs for Unity/C# games</span></div>
+      <div class="stat"><b>4+</b><span data-k="s4">years of professional experience</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <h2 data-k="h1t">Selected work</h2>
+    <div class="grid">
+      <article class="card">
+        <h3 data-k="w1">Loan Widget</h3>
+        <p data-k="w1d">Bilingual loan widget for the MetaBase portal: installment payment with idempotency, ambiguous-payment handling and a lock on a second payment until the first resolves, plus points transfer with OTP and a loan calculator.</p>
+        <div class="tags"><span class="tag">Angular</span><span class="tag">RxJS</span><span class="tag m">Idempotency</span><span class="tag">i18n</span></div>
+      </article>
+      <article class="card">
+        <h3 data-k="w2">Card and Account Widget</h3>
+        <p data-k="w2d">Angular 21, zoneless and signal-first: card block/unblock, multi-step reissuance, PIN and transaction limits, account details, transfers and statements, in Persian and English with RTL/LTR.</p>
+        <div class="tags"><span class="tag">Angular 21</span><span class="tag">Signals</span><span class="tag m">Zoneless</span><span class="tag">RTL</span></div>
+      </article>
+      <article class="card">
+        <h3 data-k="w3">Kids Banking Widget</h3>
+        <p data-k="w3d">Parental-control widget for children’s accounts: multi-step account opening with document upload, rules acceptance and request tracking, packaged with Angular Elements.</p>
+        <div class="tags"><span class="tag">Angular Elements</span><span class="tag">Signals</span><span class="tag m">Multi-step flow</span></div>
+      </article>
+      <article class="card">
+        <h3 data-k="w4">Tayf Design System</h3>
+        <p data-k="w4d">Lit web components wrapped around Shoelace, with our own control and theming layer and a comprehensive utility-class set. Cut the library from 800 KB to 350 KB (56%).</p>
+        <div class="tags"><span class="tag">Lit</span><span class="tag">Web Components</span><span class="tag m">Shoelace</span><span class="tag">Design Systems</span></div>
+      </article>
+      <article class="card">
+        <h3 data-k="w5">Pakfam</h3>
+        <p data-k="w5d">A white-label wallet and card product delivered to a third-party partner: portal, admin panel and white-label app, with card issuing and services such as top-ups and card-to-card transfers.</p>
+        <div class="tags"><span class="tag">Nx Monorepo</span><span class="tag">DDD</span><span class="tag m">PrimeNG</span><span class="tag">Tailwind CSS</span></div>
+      </article>
+      <article class="card">
+        <h3 data-k="w6">Keycloak Theme and E-Signature</h3>
+        <p data-k="w6d">Custom Keycloak login theme (Keycloakify, React, Vite, Tailwind) with an OTP flow and Docker deployment, and a Capacitor + Angular digital-signature widget for facility and promissory-note documents.</p>
+        <div class="tags"><span class="tag">Keycloakify</span><span class="tag">Capacitor</span><span class="tag m">Docker</span><span class="tag">Vite</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2 data-k="h2t">Experience</h2>
+    <ul class="tl">
+      <li><span class="when" data-k="t1w">Oct 2025 – Present</span>
+        <h3 data-k="t1">Frontend Developer (Angular), Melal E-Commerce and IT (FAM)</h3>
+        <p data-k="t1d">Owner of the MetaBank widget suite in the platform rewrite, and part of the technical decisions on how development proceeds.</p></li>
+      <li><span class="when">Aug 2024 – Oct 2025</span>
+        <h3 data-k="t2">iOS Developer (Swift), Melal E-Commerce and IT (FAM)</h3>
+        <p data-k="t2d">Native iOS features for MetaBank (1M users) with Swift and MVVM.</p></li>
+      <li><span class="when">Oct 2022 – Sep 2024</span>
+        <h3 data-k="t3">Compulsory military service</h3></li>
+      <li><span class="when">Jan 2022 – Oct 2022</span>
+        <h3 data-k="t4">Frontend Developer, Alibaba Travels</h3>
+        <p data-k="t4d">Hotel booking web features with JavaScript, TypeScript and Vue.js.</p></li>
+      <li><span class="when">Mar 2021 – Jan 2022</span>
+        <h3 data-k="t5">Frontend Developer, Adam Barfi</h3>
+        <p data-k="t5d">Web design projects with HTML, CSS, JavaScript, Bootstrap, Tailwind CSS and PHP.</p></li>
+      <li><span class="when">Jan 2020 – Jan 2021</span>
+        <h3 data-k="t6">C# Developer, Simiad Game Studio</h3>
+        <p data-k="t6d">Unity and C# games with 500,000+ combined installs.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 data-k="h3t">Skills</h2>
+    <div class="skills">
+      <div class="card"><h3 data-k="k1">Frontend</h3><div class="tags" style="margin-top:0">
+        <span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">RxJS</span><span class="tag">Signals</span><span class="tag">Lit</span><span class="tag">Web Components</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SCSS</span><span class="tag">Tailwind CSS</span><span class="tag">PrimeNG</span><span class="tag">React</span><span class="tag">Vue.js</span></div></div>
+      <div class="card"><h3 data-k="k2">Architecture and tooling</h3><div class="tags" style="margin-top:0">
+        <span class="tag m">Nx Monorepo</span><span class="tag m">Domain-Driven Design</span><span class="tag m">Micro-frontend Widgets</span><span class="tag m">Design Systems</span><span class="tag m">REST APIs</span><span class="tag m">Git</span><span class="tag m">Docker</span><span class="tag m">Vite</span><span class="tag m">ESLint</span><span class="tag m">Keycloak</span></div></div>
+      <div class="card"><h3 data-k="k3">Mobile and other</h3><div class="tags" style="margin-top:0">
+        <span class="tag">Swift</span><span class="tag">iOS (MVVM)</span><span class="tag">Capacitor</span><span class="tag">C#</span><span class="tag">Unity</span><span class="tag">PHP</span><span class="tag">Figma</span><span class="tag">i18n / RTL</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 data-k="h4t">Education and credentials</h2>
+    <div class="two">
+      <div class="card"><h3 data-k="e1h">Education</h3><p data-k="e1">B.Sc. Software Engineering, Imam Khomeini International University</p></div>
+      <div class="card"><h3 data-k="e2h">Certifications</h3><p data-k="e2">Angular (Basic) and Angular (Intermediate), HackerRank</p></div>
+      <div class="card"><h3 data-k="e3h">Languages</h3><p data-k="e3">Persian (native), English (professional working)</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 data-k="h5t">Contact</h2>
+    <p data-k="ct">I’m open to new opportunities. Feel free to reach out.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:m.r.gholikhani1@gmail.com">m.r.gholikhani1@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/mrgholikhani" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/mrghkh12" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Mohammad Reza Gholikhani</footer>
+
+<script>
+const FA={
+logo:'محمدرضا قلیخانی',n1:'کارها',n2:'تجربه',n3:'مهارت‌ها',n4:'ارتباط',
+open:'آماده فرصت‌های جدید',role:'توسعه‌دهنده فرانت‌اند',name:'محمدرضا قلیخانی',
+lead:'رابط‌های کاربری سریع و قابل‌اعتماد برای محصولات بانکی می‌سازم؛ با Angular، معماری تمیز و دیزاین‌سیستم.',
+cta1:'تماس با من',
+s1:'کاربر روی پلتفرم متابانک',s2:'کاهش حجم دیزاین‌سیستم (۸۰۰ به ۳۵۰ کیلوبایت)',s3:'نصب بازی‌های Unity/C#',s4:'سال تجربه حرفه‌ای',
+h1t:'نمونه کارهای منتخب',h2t:'تجربه کاری',h3t:'مهارت‌ها',h4t:'تحصیلات و مدارک',h5t:'ارتباط',
+w1:'ویجت تسهیلات',w1d:'ویجت دوزبانه تسهیلات برای پورتال متابیس: پرداخت اقساط با idempotency، مدیریت پرداخت مبهم و قفل پرداخت دوم تا تعیین تکلیف اولی، به‌همراه انتقال امتیاز با کد تأیید و محاسبه‌گر تسهیلات.',
+w2:'ویجت کارت و حساب',w2d:'Angular 21 به‌صورت zoneless و signal-first: مسدودسازی موقت کارت، صدور مجدد چندمرحله‌ای، رمز و سقف تراکنش، جزئیات حساب، انتقال وجه و صورتحساب؛ فارسی و انگلیسی با RTL/LTR.',
+w3:'ویجت بانکداری کودک',w3d:'ویجت کنترل والدین برای حساب کودکان: افتتاح حساب چندمرحله‌ای با آپلود مدرک، پذیرش قوانین و پیگیری درخواست‌ها، با Angular Elements.',
+w4:'دیزاین‌سیستم طیف',w4d:'کامپوننت‌های Lit روی Shoelace، با لایه کنترل و تم‌بندی اختصاصی و مجموعه جامع utility class. حجم کتابخانه از ۸۰۰ به ۳۵۰ کیلوبایت (۵۶٪) رسید.',
+w5:'پک‌فام',w5d:'محصول کیف پول و کارت برند سفید برای شریک ثالث: پورتال، پنل ادمین و اپ وایت‌لیبل، با صدور کارت و خدماتی مثل خرید شارژ و کارت‌به‌کارت.',
+w6:'تم Keycloak و امضای دیجیتال',w6d:'قالب سفارشی ورود Keycloak (Keycloakify، React، Vite، Tailwind) با جریان OTP و استقرار Docker، و ویجت امضای دیجیتال (Capacitor + Angular) برای اسناد تسهیلات و سفته.',
+t1w:'Oct 2025 – اکنون',
+t1:'توسعه‌دهنده فرانت‌اند (Angular)، فناوری اطلاعات و تجارت الکترونیک ملل (فام)',t1d:'مسئول مجموعه ویجت‌های متابانک در بازنویسی پلتفرم و مشارکت در تصمیم‌های فنی مسیر توسعه.',
+t2:'توسعه‌دهنده iOS (Swift)، فناوری اطلاعات و تجارت الکترونیک ملل (فام)',t2d:'توسعه فیچرهای نیتیو iOS متابانک (۱ میلیون کاربر) با Swift و MVVM.',
+t3:'خدمت سربازی',
+t4:'توسعه‌دهنده فرانت‌اند، علی‌بابا',t4d:'ویژگی‌های وب بخش رزرو هتل با JavaScript، TypeScript و Vue.js.',
+t5:'توسعه‌دهنده فرانت‌اند، آدم برفی',t5d:'پروژه‌های طراحی وب با HTML، CSS، JavaScript، Bootstrap، Tailwind CSS و PHP.',
+t6:'توسعه‌دهنده C#، استودیو بازی‌سازی سیمیاد',t6d:'بازی‌های Unity و C# با بیش از ۵۰۰ هزار نصب.',
+k1:'فرانت‌اند',k2:'معماری و ابزار',k3:'موبایل و سایر',
+e1h:'تحصیلات',e1:'کارشناسی مهندسی نرم‌افزار، دانشگاه بین‌المللی امام خمینی',
+e2h:'مدارک',e2:'Angular (Basic) و Angular (Intermediate)، HackerRank',
+e3h:'زبان‌ها',e3:'فارسی (زبان مادری)، انگلیسی (حرفه‌ای)',
+ct:'برای فرصت‌های جدید آماده‌ام؛ خوشحال می‌شوم پیام بدهید.'
+};
+const els=[...document.querySelectorAll('[data-k]')];
+els.forEach(e=>{e.dataset.en=e.textContent});
+const btn=document.getElementById('lang');
+function setLang(l){
+  const fa=l==='fa';
+  document.documentElement.lang=l;
+  document.documentElement.dir=fa?'rtl':'ltr';
+  els.forEach(e=>{e.textContent=fa?(FA[e.dataset.k]||e.dataset.en):e.dataset.en});
+  btn.textContent=fa?'EN':'فارسی';
+  document.title=fa?'محمدرضا قلیخانی | توسعه‌دهنده فرانت‌اند':'Mohammad Reza Gholikhani | Frontend Developer';
+  try{localStorage.setItem('lang',l)}catch(err){}
+}
+btn.addEventListener('click',()=>setLang(document.documentElement.lang==='fa'?'en':'fa'));
+let saved='en';
+try{saved=localStorage.getItem('lang')||'en'}catch(err){}
+if(saved==='fa')setLang('fa');
+</script>
+</body>
+</html>
